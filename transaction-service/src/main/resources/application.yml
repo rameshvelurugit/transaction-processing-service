@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: transaction-service
+  datasource:
+    url: jdbc:h2:mem:transactiondb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,loggers,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+info:
+  app:
+    name: Transaction Processing Service
+    description: Idempotent background transaction processor
+    version: 1.0.0
+
+transaction:
+  processing:
+    scheduler:
+      enabled: true
+      fixed-delay-ms: 30000
+
+logging:
+  level:
+    root: INFO
+    com.transactionprocessing: INFO

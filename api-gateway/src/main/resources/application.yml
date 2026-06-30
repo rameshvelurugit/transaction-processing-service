@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: transaction-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/transactions/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /${segment}
+        - id: transaction-service-actuator
+          uri: http://localhost:8081
+          predicates:
+            - Path=/actuator/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,loggers,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+info:
+  app:
+    name: Transaction API Gateway
+    version: 1.0.0
+
+logging:
+  level:
+    root: INFO
+    com.transactionprocessing: INFO

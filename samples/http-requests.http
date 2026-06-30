@@ -1,0 +1,50 @@
+### Submit transaction (via gateway)
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+X-Correlation-Id: demo-001
+
+{
+  "transactionId": "TXN-DEMO-001",
+  "requestId": "REQ-DEMO-001",
+  "sequenceNumber": 1,
+  "accountId": "ACC-1001",
+  "amount": 50.00,
+  "type": "CREDIT"
+}
+
+### Submit duplicate (same transactionId + requestId)
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "transactionId": "TXN-DEMO-001",
+  "requestId": "REQ-DEMO-001",
+  "sequenceNumber": 1,
+  "accountId": "ACC-1001",
+  "amount": 50.00,
+  "type": "CREDIT"
+}
+
+### Get all transactions
+GET http://localhost:8080/api/transactions
+
+### Get transaction by id
+GET http://localhost:8080/api/transactions/1
+
+### Processing summary
+GET http://localhost:8080/api/transactions/summary
+
+### Trigger background processing
+POST http://localhost:8080/api/transactions/process
+
+### Retry failed transactions
+POST http://localhost:8080/api/transactions/retry
+
+### Health (gateway)
+GET http://localhost:8080/actuator/health
+
+### Health (service direct)
+GET http://localhost:8081/actuator/health
+
+### Prometheus metrics
+GET http://localhost:8081/actuator/prometheus
