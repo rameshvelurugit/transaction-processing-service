@@ -17,4 +17,17 @@ if [[ -n "${JAVA_HOME:-}" ]]; then
   echo "Using JAVA_HOME: ${JAVA_HOME}"
 fi
 
-mvn clean test "$@"
+TEST_EXIT=0
+mvn clean test "$@" || TEST_EXIT=$?
+
+echo ""
+python3 "${SCRIPT_DIR}/generate-test-dashboard.py" || true
+
+DASHBOARD="${PROJECT_ROOT}/target/test-dashboard.html"
+if [[ -f "${DASHBOARD}" ]]; then
+  if [[ "$(uname -s)" == "Darwin" ]] && command -v open >/dev/null 2>&1; then
+    open "${DASHBOARD}" >/dev/null 2>&1 || true
+  fi
+fi
+
+exit "${TEST_EXIT}"
