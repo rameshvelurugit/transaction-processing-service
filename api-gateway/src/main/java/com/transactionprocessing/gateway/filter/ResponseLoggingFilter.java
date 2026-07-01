@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+/**
+ * Logs completed gateway requests with HTTP status and elapsed duration after the response is sent.
+ */
 @Slf4j
 @Component
 public class ResponseLoggingFilter implements GlobalFilter, Ordered {

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Aggregates transaction counts by status and tracks how many were processed in the most recent run.
+ */
 @Service
 @RequiredArgsConstructor
 public class ProcessingSummaryService {

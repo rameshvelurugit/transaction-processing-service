@@ -15,6 +15,9 @@ import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
+/**
+ * Ensures every gateway request carries correlation, trace, and request IDs in headers and MDC for downstream propagation.
+ */
 @Slf4j
 @Component
 public class CorrelationIdFilter implements GlobalFilter, Ordered {

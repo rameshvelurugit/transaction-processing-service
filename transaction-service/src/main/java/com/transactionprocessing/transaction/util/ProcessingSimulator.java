@@ -4,6 +4,9 @@ import com.transactionprocessing.common.constants.TransactionConstants;
 
 import java.math.BigDecimal;
 
+/**
+ * Utility for simulating transient failures and insufficient-funds scenarios during demo and test processing.
+ */
 public final class ProcessingSimulator {
 
     /** Amount used in sample data to simulate transient processing failures. */

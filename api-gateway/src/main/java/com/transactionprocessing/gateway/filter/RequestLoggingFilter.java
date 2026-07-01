@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+/**
+ * Logs incoming gateway requests with HTTP method and path at the earliest filter precedence.
+ */
 @Slf4j
 @Component
 public class RequestLoggingFilter implements GlobalFilter, Ordered {

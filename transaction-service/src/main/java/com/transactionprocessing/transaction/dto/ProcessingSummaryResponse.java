@@ -5,6 +5,9 @@ import lombok.Value;
 
 import java.util.Map;
 
+/**
+ * Aggregated transaction status counts and metrics from the most recent processing run.
+ */
 @Value
 @Builder
 public class ProcessingSummaryResponse {

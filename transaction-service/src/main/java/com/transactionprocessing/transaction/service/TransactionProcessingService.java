@@ -20,6 +20,9 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Core processing engine that applies balance updates, enforces per-account sequencing, and handles retries.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -164,6 +167,9 @@ public class TransactionProcessingService {
         return count;
     }
 
+    /**
+     * Outcome of processing a single transaction, used to tally results in batch runs.
+     */
     public enum ProcessingOutcome {
         PROCESSED, FAILED, PENDING, DUPLICATE, RETRY_PENDING, SKIPPED
     }

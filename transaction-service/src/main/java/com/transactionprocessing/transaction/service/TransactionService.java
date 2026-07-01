@@ -19,6 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Orchestrates transaction ingestion, duplicate detection, and delegates processing and retry operations.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

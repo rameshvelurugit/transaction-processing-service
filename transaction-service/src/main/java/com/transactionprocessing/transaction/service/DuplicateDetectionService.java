@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+/**
+ * Detects duplicate transaction submissions at ingestion and processing time and marks them accordingly.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

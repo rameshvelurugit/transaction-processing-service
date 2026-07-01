@@ -19,6 +19,9 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 
+/**
+ * Reactive exception handler that converts unhandled gateway errors into standardized JSON {@link ErrorResponse} payloads.
+ */
 @Slf4j
 @Order(-2)
 @Component

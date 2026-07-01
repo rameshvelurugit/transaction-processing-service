@@ -15,6 +15,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * JPA entity holding the current balance for an account, updated as transactions are processed.
+ */
 @Entity
 @Table(name = "accounts")
 @Getter

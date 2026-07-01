@@ -4,6 +4,9 @@ import com.transactionprocessing.transaction.dto.TransactionResponse;
 import com.transactionprocessing.transaction.entity.Transaction;
 import org.springframework.stereotype.Component;
 
+/**
+ * Maps {@link Transaction} entities to {@link TransactionResponse} DTOs for API output.
+ */
 @Component
 public class TransactionMapper {
 

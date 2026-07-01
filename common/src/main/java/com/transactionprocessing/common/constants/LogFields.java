@@ -1,5 +1,8 @@
 package com.transactionprocessing.common.constants;
 
+/**
+ * MDC (Mapped Diagnostic Context) key names used for structured, correlatable log output.
+ */
 public final class LogFields {
 
     public static final String APPLICATION_NAME = "applicationName";

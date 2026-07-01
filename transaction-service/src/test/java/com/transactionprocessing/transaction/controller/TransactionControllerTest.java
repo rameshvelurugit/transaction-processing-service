@@ -23,6 +23,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * WebMvc tests verifying transaction REST endpoint behavior, status codes, and response structure.
+ */
 @WebMvcTest(TransactionController.class)
 @Import(GlobalExceptionHandler.class)
 class TransactionControllerTest {

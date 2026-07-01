@@ -14,6 +14,9 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * DataJpa tests for custom {@link TransactionRepository} queries including sequencing and duplicate lookups.
+ */
 @DataJpaTest
 @TestPropertySource(properties = "spring.sql.init.mode=never")
 @Sql(scripts = "/schema.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)

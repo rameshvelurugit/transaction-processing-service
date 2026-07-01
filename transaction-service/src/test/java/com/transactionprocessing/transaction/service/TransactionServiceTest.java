@@ -22,6 +22,9 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Unit tests for transaction ingestion, duplicate detection, and idempotent re-submission handling.
+ */
 @ExtendWith(MockitoExtension.class)
 class TransactionServiceTest {
 

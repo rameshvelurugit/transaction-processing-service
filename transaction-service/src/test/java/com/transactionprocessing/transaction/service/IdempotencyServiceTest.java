@@ -14,6 +14,9 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Unit tests verifying idempotency record creation and duplicate detection lookups.
+ */
 @ExtendWith(MockitoExtension.class)
 class IdempotencyServiceTest {
 

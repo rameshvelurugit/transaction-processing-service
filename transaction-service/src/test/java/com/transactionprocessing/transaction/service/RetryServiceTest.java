@@ -16,6 +16,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
+/**
+ * Unit tests for retry attempt tracking and permanent failure marking when max retries are exceeded.
+ */
 @ExtendWith(MockitoExtension.class)
 class RetryServiceTest {
 

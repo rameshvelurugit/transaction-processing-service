@@ -2,6 +2,9 @@ package com.transactionprocessing.common.exception;
 
 import lombok.Getter;
 
+/**
+ * Base runtime exception that carries a machine-readable error code for consistent API error responses.
+ */
 @Getter
 public abstract class BaseException extends RuntimeException {
 

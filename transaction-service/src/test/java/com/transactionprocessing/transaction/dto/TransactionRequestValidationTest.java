@@ -9,6 +9,9 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Tests Bean Validation constraints on {@link TransactionRequest} field values and formats.
+ */
 class TransactionRequestValidationTest {
 
     private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();

@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.Instant;
 import java.util.List;
 
+/**
+ * Central exception handler mapping validation, domain, and unexpected errors to standardized {@link ErrorResponse} payloads.
+ */
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {

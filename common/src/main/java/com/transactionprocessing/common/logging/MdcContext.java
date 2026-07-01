@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Utility for setting, reading, and clearing SLF4J MDC fields that enrich logs with request context.
+ */
 public final class MdcContext {
 
     private MdcContext() {

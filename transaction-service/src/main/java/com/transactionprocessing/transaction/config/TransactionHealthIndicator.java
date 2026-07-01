@@ -6,6 +6,9 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
+/**
+ * Actuator health indicator reporting transaction backlog and failure counts, degrading when failures exceed a threshold.
+ */
 @Component
 public class TransactionHealthIndicator implements HealthIndicator {
 

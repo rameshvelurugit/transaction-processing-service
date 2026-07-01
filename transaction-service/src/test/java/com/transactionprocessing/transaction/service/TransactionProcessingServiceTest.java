@@ -23,6 +23,9 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Unit tests for core processing logic including sequencing, balance updates, and retryable failure handling.
+ */
 @ExtendWith(MockitoExtension.class)
 class TransactionProcessingServiceTest {
 

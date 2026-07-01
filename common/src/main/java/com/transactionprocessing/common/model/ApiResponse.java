@@ -6,6 +6,9 @@ import lombok.Value;
 
 import java.time.Instant;
 
+/**
+ * Standard wrapper for successful API responses, carrying a timestamp, correlation ID, and typed payload.
+ */
 @Value
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -11,6 +11,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
+/**
+ * Unit tests for aggregating transaction counts by status into a processing summary response.
+ */
 @ExtendWith(MockitoExtension.class)
 class ProcessingSummaryServiceTest {
 

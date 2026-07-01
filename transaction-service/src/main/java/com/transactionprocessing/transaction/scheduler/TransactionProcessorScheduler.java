@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/**
+ * Periodically triggers background processing of pending transactions on a configurable fixed delay.
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor

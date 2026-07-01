@@ -7,6 +7,9 @@ import lombok.Value;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * API representation of a transaction including its current status, retry count, and timestamps.
+ */
 @Value
 @Builder
 public class TransactionResponse {

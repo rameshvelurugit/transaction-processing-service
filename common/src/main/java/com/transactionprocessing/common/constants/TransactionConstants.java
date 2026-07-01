@@ -1,5 +1,8 @@
 package com.transactionprocessing.common.constants;
 
+/**
+ * Business rules and validation patterns governing transaction type, account format, and retry limits.
+ */
 public final class TransactionConstants {
 
     public static final int MAX_RETRY_ATTEMPTS = 3;

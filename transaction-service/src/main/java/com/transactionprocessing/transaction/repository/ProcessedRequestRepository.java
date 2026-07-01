@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+/**
+ * JPA repository for idempotency records used to detect already-processed transaction/request pairs.
+ */
 public interface ProcessedRequestRepository extends JpaRepository<ProcessedRequest, Long> {
 
     boolean existsByTransactionIdAndRequestId(String transactionId, String requestId);

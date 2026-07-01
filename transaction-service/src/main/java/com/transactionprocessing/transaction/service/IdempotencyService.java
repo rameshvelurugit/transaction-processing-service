@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Tracks processed transaction/request ID pairs to guarantee idempotent, exactly-once processing semantics.
+ */
 @Service
 @RequiredArgsConstructor
 public class IdempotencyService {

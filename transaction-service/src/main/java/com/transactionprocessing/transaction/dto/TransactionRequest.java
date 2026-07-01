@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * Incoming API payload for submitting a new transaction, with Bean Validation constraints on all fields.
+ */
 @Data
 @Builder
 @NoArgsConstructor

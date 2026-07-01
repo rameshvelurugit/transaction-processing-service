@@ -16,6 +16,9 @@ import lombok.Setter;
 
 import java.time.Instant;
 
+/**
+ * Idempotency record linking external transaction and request IDs to the internal transaction that processed them.
+ */
 @Entity
 @Table(name = "processed_requests", uniqueConstraints = {
         @UniqueConstraint(name = "uk_processed_txn_request", columnNames = {"transaction_id", "request_id"})

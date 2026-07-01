@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * JPA repository for transaction persistence with custom queries for sequencing and status-based lookups.
+ */
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
     Optional<Transaction> findByTransactionIdAndRequestId(String transactionId, String requestId);

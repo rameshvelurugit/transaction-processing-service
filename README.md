@@ -200,9 +200,23 @@ For a clean test run (recommended):
 
 The script auto-selects Java 21 on macOS when available. Pass extra Maven args through, e.g. `./scripts/run-tests.sh -pl transaction-service`.
 
+### Test results dashboard
+
+After tests complete, `./scripts/run-tests.sh` automatically:
+
+1. Prints a **terminal dashboard** with unit/integration summary and every scenario (PASS/FAIL + time)
+2. Generates **`target/test-dashboard.html`** (opens in browser on macOS)
+3. Links to **JaCoCo coverage** when available
+
+Regenerate the dashboard without re-running tests:
+
+```bash
+python3 scripts/generate-test-dashboard.py
+```
+
 JaCoCo report: `transaction-service/target/site/jacoco/index.html`
 
-Test categories: controller, service, repository, validation, retry, duplicate, idempotency, summary.
+Test categories: controller, service, repository, validation, retry, duplicate, idempotency, summary, **integration** (end-to-end idempotency, failures, out-of-order, retry API).
 
 ## Logging Explanation
 

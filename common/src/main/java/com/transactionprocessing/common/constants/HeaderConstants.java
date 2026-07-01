@@ -1,5 +1,8 @@
 package com.transactionprocessing.common.constants;
 
+/**
+ * HTTP header names used for distributed tracing and request correlation across services.
+ */
 public final class HeaderConstants {
 
     public static final String CORRELATION_ID = "X-Correlation-Id";

@@ -20,6 +20,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * JPA entity representing a financial transaction as it moves through the ingestion and processing pipeline.
+ */
 @Entity
 @Table(name = "transactions", uniqueConstraints = {
         @UniqueConstraint(name = "uk_transaction_request", columnNames = {"transaction_id", "request_id"})

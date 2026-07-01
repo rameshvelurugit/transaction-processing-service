@@ -7,6 +7,9 @@ import lombok.Value;
 import java.time.Instant;
 import java.util.List;
 
+/**
+ * Structured error payload returned by REST controllers and the API gateway when a request fails.
+ */
 @Value
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,6 +24,9 @@ public class ErrorResponse {
     String correlationId;
     List<FieldError> fieldErrors;
 
+    /**
+     * Describes a single field-level validation failure included in an error response.
+     */
     @Value
     @Builder
     public static class FieldError {
